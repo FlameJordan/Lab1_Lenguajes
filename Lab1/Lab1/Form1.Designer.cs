@@ -1,4 +1,5 @@
 ﻿
+
 namespace Lab1
 {
     partial class Form1
@@ -121,6 +122,7 @@ namespace Lab1
             this.tb_Importe.Name = "tb_Importe";
             this.tb_Importe.Size = new System.Drawing.Size(131, 23);
             this.tb_Importe.TabIndex = 6;
+            this.tb_Importe.TextChanged += new System.EventHandler(this.tb_Importe_TextChanged);
             // 
             // label4
             // 
@@ -185,9 +187,9 @@ namespace Lab1
             this.lb_CantidadA.AutoSize = true;
             this.lb_CantidadA.Location = new System.Drawing.Point(154, 114);
             this.lb_CantidadA.Name = "lb_CantidadA";
-            this.lb_CantidadA.Size = new System.Drawing.Size(44, 15);
+            this.lb_CantidadA.Size = new System.Drawing.Size(13, 15);
             this.lb_CantidadA.TabIndex = 13;
-            this.lb_CantidadA.Text = "label10";
+            this.lb_CantidadA.Text = "0";
             this.lb_CantidadA.Click += new System.EventHandler(this.label10_Click);
             // 
             // lb_CantidadB
@@ -195,27 +197,28 @@ namespace Lab1
             this.lb_CantidadB.AutoSize = true;
             this.lb_CantidadB.Location = new System.Drawing.Point(154, 158);
             this.lb_CantidadB.Name = "lb_CantidadB";
-            this.lb_CantidadB.Size = new System.Drawing.Size(44, 15);
+            this.lb_CantidadB.Size = new System.Drawing.Size(13, 15);
             this.lb_CantidadB.TabIndex = 14;
-            this.lb_CantidadB.Text = "label11";
+            this.lb_CantidadB.Text = "0";
+            this.lb_CantidadB.Click += new System.EventHandler(this.lb_CantidadB_Click);
             // 
             // lb_TotalConver
             // 
             this.lb_TotalConver.AutoSize = true;
             this.lb_TotalConver.Location = new System.Drawing.Point(154, 207);
             this.lb_TotalConver.Name = "lb_TotalConver";
-            this.lb_TotalConver.Size = new System.Drawing.Size(44, 15);
+            this.lb_TotalConver.Size = new System.Drawing.Size(13, 15);
             this.lb_TotalConver.TabIndex = 15;
-            this.lb_TotalConver.Text = "label12";
+            this.lb_TotalConver.Text = "0";
             // 
             // lb_Total2Apl
             // 
             this.lb_Total2Apl.AutoSize = true;
             this.lb_Total2Apl.Location = new System.Drawing.Point(154, 261);
             this.lb_Total2Apl.Name = "lb_Total2Apl";
-            this.lb_Total2Apl.Size = new System.Drawing.Size(44, 15);
+            this.lb_Total2Apl.Size = new System.Drawing.Size(13, 15);
             this.lb_Total2Apl.TabIndex = 16;
-            this.lb_Total2Apl.Text = "label13";
+            this.lb_Total2Apl.Text = "0";
             this.lb_Total2Apl.Click += new System.EventHandler(this.label13_Click);
             // 
             // tb_NombrePais
@@ -232,6 +235,7 @@ namespace Lab1
             this.cb_Divisa.Name = "cb_Divisa";
             this.cb_Divisa.Size = new System.Drawing.Size(100, 23);
             this.cb_Divisa.TabIndex = 18;
+            this.cb_Divisa.SelectedIndexChanged += new System.EventHandler(this.cb_Divisa_SelectedIndexChanged);
             // 
             // btn_Crear
             // 
@@ -379,6 +383,100 @@ namespace Lab1
         private System.Windows.Forms.Button btn_Buscar;
         private System.Windows.Forms.Button btn_Actualizar;
         private System.Windows.Forms.Button btn_Borrar;
+
+
+        public void intercambio_divisas()
+        {
+            
+        }
+
+        
+
+
+    }
+
+   
+
+}
+
+class Divisa
+{
+    private int codigo;
+    private string nombre;
+    private float valorAlDolar;
+
+    public Divisa()
+    {
+        this.codigo = 0;
+        this.nombre = "";
+        this.valorAlDolar = 0;
+
+    }
+
+    public Divisa(int codigo,string nombre,float valorAlDolar)
+    {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.valorAlDolar = valorAlDolar;
+
+    }
+
+    public int Codigo
+    {
+        get { return this.codigo; }   
+        set { this.codigo = value; }
+    }
+
+    public string Nombre
+    {
+        get { return this.nombre; }
+        set { this.nombre = value; }
+    }
+
+    public float ValorAlDolar
+    {
+        get { return this.valorAlDolar; }
+        set { this.valorAlDolar = value; }
     }
 }
 
+class Pais
+{
+    private int codigo;
+    private string nombre;
+    private int cod_divisa;
+
+    public Pais()
+    {
+        this.codigo = 0;
+        this.nombre = "";
+        this.cod_divisa = 0;
+    }
+
+    public Pais(int codigo, string nombre, float valorAlDolar)
+    {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.cod_divisa = cod_divisa;
+
+    }
+
+    public int Codigo
+    {
+        get { return this.codigo; }
+        set { this.codigo = value; }
+    }
+
+    public string Nombre
+    {
+        get { return this.nombre; }
+        set { this.nombre = value; }
+    }
+
+    public int Cod_divisa
+    {
+        get { return this.cod_divisa; }
+        set { this.cod_divisa = value; }
+    }
+
+}
