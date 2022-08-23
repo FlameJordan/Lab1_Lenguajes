@@ -1,4 +1,4 @@
-After running the project, be created a database named nearlinx_time_tracker_db and is necessary to execute to following SQLscript.
+After running the project, be created a database named nearlinx_time_tracker_db and is necessary to execute to following SQL script.
 ```sh
 -- clear tables
 DELETE FROM RoleUser;
@@ -31,3 +31,4 @@ INSERT INTO RoleUser VALUES
 (@rateManagementRoleId,@userId)
 ;
 ```
+After this you can to login with username jdoe and password 1234.
